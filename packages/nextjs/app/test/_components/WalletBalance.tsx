@@ -1,3 +1,5 @@
+"use client";
+
 import { useBalance } from "wagmi";
 
 export function WalletBalance(params: { address: `0x${string}` }) {

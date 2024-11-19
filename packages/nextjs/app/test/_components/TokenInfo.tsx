@@ -1,3 +1,5 @@
+"use client";
+
 import { useReadContract } from "wagmi";
 
 export function TokenInfo(params: { address: `0x${string}` }) {
