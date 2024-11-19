@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import { HelloWorldContractRead } from "~~/app/test/_components/HelloWorld";
+import { RandomWord } from "~~/app/test/_components/RandomWord";
+import { WalletInfo } from "~~/app/test/_components/WalletInfo";
 
 const Home: NextPage = () => {
   return (
@@ -7,17 +9,10 @@ const Home: NextPage = () => {
       <div className="flex items-center flex-col flex-grow pt-10">
         <div className="px-5">
           <h1 className="text-center mb-8">
-            <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">Scaffold-ETH 2</span>
+            <span className="block text-2xl mb-2">We are officially...</span>
+            <span className="block text-4xl font-bold">Testing!</span>
           </h1>
-          <p className="text-center text-lg">
-            Get started by editing{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/nextjs/pages/index.tsx
-            </code>
-          </p>
           <PageBody />
-          <HelloWorldContractRead />
         </div>
       </div>
     </>
@@ -27,7 +22,9 @@ const Home: NextPage = () => {
 function PageBody() {
   return (
     <>
-      <p className="text-center text-lg">Here we are!</p>
+      <WalletInfo />
+      <RandomWord />
+      <HelloWorldContractRead />
     </>
   );
 }
