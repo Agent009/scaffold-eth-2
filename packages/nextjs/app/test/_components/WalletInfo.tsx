@@ -1,8 +1,7 @@
 "use client";
 
 import { useAccount } from "wagmi";
-import { TokenInfo } from "~~/app/test/_components/TokenInfo";
-import { WalletAction } from "~~/app/test/_components/WalletAction";
+import { ApiData } from "~~/app/test/_components/ApiData";
 import { WalletBalance } from "~~/app/test/_components/WalletBalance";
 
 export function WalletInfo() {
@@ -10,11 +9,15 @@ export function WalletInfo() {
   if (address)
     return (
       <div>
-        <p>Your account address is {address}</p>
-        <p>Connected to the network {chain?.name}</p>
-        <WalletAction />
+        <div className="flex flex-row justify-between items-center w-full">
+          <code className="flex-1 block whitespace-pre overflow-none text-left">{address}</code>
+          <span className="flex-none px-2">on</span>
+          <code className="flex-1 block whitespace-pre overflow-none text-right">{chain?.name}</code>
+        </div>
+        {/*<WalletAction />*/}
         <WalletBalance address={address as `0x${string}`} />
-        <TokenInfo address={address as `0x${string}`}></TokenInfo>
+        {/*<TokenInfo address={address as `0x${string}`}></TokenInfo>*/}
+        <ApiData address={address as `0x${string}`}></ApiData>
       </div>
     );
   if (isConnecting)

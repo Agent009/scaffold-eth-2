@@ -4,6 +4,8 @@ import React, { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getUrl } from "@utils/api";
+import { constants } from "@utils/constants";
 import { BanknotesIcon, Bars3Icon, BugAntIcon } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
@@ -21,12 +23,12 @@ export const menuLinks: HeaderMenuLink[] = [
   },
   {
     label: "Debug Contracts",
-    href: "/debug",
+    href: getUrl(constants.routes.debug),
     icon: <BugAntIcon className="h-4 w-4" />,
   },
   {
     label: "Test",
-    href: "/test",
+    href: getUrl(constants.routes.test),
     icon: <BanknotesIcon className="h-4 w-4" />,
   },
 ];
@@ -98,8 +100,8 @@ export const Header = () => {
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold leading-tight">Scaffold-ETH</span>
-            <span className="text-xs">Ethereum dev stack</span>
+            <span className="font-bold leading-tight">{constants.app.name}</span>
+            <span className="text-xs">{constants.app.caption}</span>
           </div>
         </Link>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">

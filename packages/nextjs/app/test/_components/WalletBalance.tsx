@@ -12,7 +12,7 @@ export function WalletBalance(params: { address: `0x${string}` }) {
   return (
     <div className="card w-96 bg-primary text-primary-content mt-4">
       <div className="card-body">
-        <h2 className="card-title">Testing useBalance wagmi hook</h2>
+        <h2 className="card-title">Wallet Balance</h2>
         Balance: {data?.formatted} {data?.symbol}
       </div>
     </div>

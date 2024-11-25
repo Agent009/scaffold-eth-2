@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import { HelloWorldContractRead } from "~~/app/test/_components/HelloWorld";
-import { RandomWord } from "~~/app/test/_components/RandomWord";
 import { WalletInfo } from "~~/app/test/_components/WalletInfo";
 
 const Home: NextPage = () => {
@@ -23,8 +21,8 @@ function PageBody() {
   return (
     <>
       <WalletInfo />
-      <RandomWord />
-      <HelloWorldContractRead />
+      {/*<RandomWord />*/}
+      {/*<HelloWorldContractRead />*/}
     </>
   );
 }
